@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <!-- client -->
     <link rel="stylesheet" href="~/css/client.css" />
 </head>
@@ -16,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Northwind</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="far fa-compass"></i> Northwind</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,23 +27,23 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Products
+                                <i class="fas fa-database"></i> Products
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-action="Category">Browse Categories</a>
-                                <a class="dropdown-item" href="#">Product Search</a>
+                                <a class="dropdown-item" asp-action="Category"><i class="fas fa-list-ul"></i> Browse Categories</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-search"></i> Product Search</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Current Discounts</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-tag"></i> Current Discounts</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Customers</a>
+                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Customers</a>
                         </li>
                     </ul>
                 </div>
                 <form class="form-inline my-2 my-lg-0 d-none d-md-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Product Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i><span class="sr-only">Search</span></button>
                 </form>
             </div>
         </nav>
