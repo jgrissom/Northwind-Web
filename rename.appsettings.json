@@ -1,0 +1,12 @@
+{
+    "Data": {
+      "Northwind": {
+        "ConnectionString": "Server=bitsql.wctc.edu;Database=databasename_##_XXX;User ID=YYY;Password=ZZZ"
+      }
+    },
+    "_comment": {
+      "##": "last 2 digits of CRN",
+      "XXX": "your initials"
+    }
+  }
+  
