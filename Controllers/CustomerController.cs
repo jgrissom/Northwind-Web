@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Northwind.Models;
+using System.Linq;
 
 namespace Northwind.Controllers
 {
@@ -15,8 +16,15 @@ namespace Northwind.Controllers
         {
             if (ModelState.IsValid)
             {
-                _northwindContext.AddCustomer(customer);
-                return RedirectToAction("Index", "Home");
+                if (_northwindContext.Customers.Any(c => c.CompanyName == customer.CompanyName))
+                {
+                    ModelState.AddModelError("", "Company Name must be unique");
+                }
+                else
+                {
+                    _northwindContext.AddCustomer(customer);
+                    return RedirectToAction("Index", "Home");
+                }
             }
             return View();
         }
