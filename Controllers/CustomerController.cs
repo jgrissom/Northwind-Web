@@ -66,6 +66,8 @@ namespace Northwind.Controllers
             }
             return View();
         }
+        [Authorize(Roles = "customer")]
+        public IActionResult Account() => View();
 
         private void AddErrorsFromResult(IdentityResult result)
         {
