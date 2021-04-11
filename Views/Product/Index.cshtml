@@ -1,5 +1,4 @@
-@using Northwind.Models
-@model IEnumerable<Product>
+@model int
 
 <table class="table table-hover">
     <thead>
@@ -9,16 +8,7 @@
             <th scope="col" class="text-right">Stock</th>
         </tr>
     </thead>
-    <tbody id="product_rows">
-        @foreach (Product p in Model)
-        {
-        <tr>
-            <td>@p.ProductName</td>
-            <td class="text-right">@string.Format("{0:c}", p.UnitPrice)</td>
-            <td class="text-right">@p.UnitsInStock</td>
-        </tr>
-        }
-    </tbody>
+    <tbody id="product_rows" data-id="@Model"></tbody>
 </table>
 @section scripts
 {
@@ -26,6 +16,8 @@
     $(function () {
         getProducts()
         function getProducts() {
+            var id = $('#product_rows').data('id');
+            alert(id);
             $.getJSON({
                 url: "../../api/product",
                 success: function (response, textStatus, jqXhr) {
