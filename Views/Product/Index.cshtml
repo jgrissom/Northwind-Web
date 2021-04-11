@@ -47,6 +47,10 @@
                 }
             });
         }
+        $('#CategoryId').on('change', function(){
+            $('#product_rows').data('id', $(this).val());
+            getProducts();
+        });
     });
     </script>
 }
