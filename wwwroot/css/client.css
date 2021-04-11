@@ -70,4 +70,8 @@ a.navbar-brand {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
   }
+
+  .discontinued {
+    opacity: .5;
+  }
   
