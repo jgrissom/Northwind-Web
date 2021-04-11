@@ -9,7 +9,7 @@
             <th scope="col" class="text-right">Stock</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="product_rows">
         @foreach (Product p in Model)
         {
         <tr>
@@ -29,7 +29,15 @@
             $.getJSON({
                 url: "../../api/product",
                 success: function (response, textStatus, jqXhr) {
-                    console.log(response);
+                    $('#product_rows').html("");
+                    for (var i = 0; i < response.length; i++){
+                        var row = "<tr>"
+                            + "<td>" + response[i].productName + "</td>"
+                            + "<td>" + response[i].unitPrice + "</td>"
+                            + "<td>" + response[i].unitsInStock + "</td>"
+                            + "</tr>";
+                        $('#product_rows').append(row);
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     // log the error to the console
