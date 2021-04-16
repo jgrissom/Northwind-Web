@@ -11,6 +11,7 @@ namespace Northwind.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Discount> Discounts { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
         public void AddCustomer(Customer customer)
         {
             Customers.Add(customer);
