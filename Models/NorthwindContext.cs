@@ -29,5 +29,18 @@ namespace Northwind.Models
             customerToUpdate.Fax = customer.Fax;
             SaveChanges();
         }
+        public CartItem AddToCart(CartItemJSON cartItemJSON)
+        {
+            CartItem cartItem = new CartItem()
+            {
+                CustomerId = Customers.FirstOrDefault(c => c.Email == cartItemJSON.email).CustomerID,
+                ProductId = cartItemJSON.id,
+                Quantity = cartItemJSON.qty
+            };
+            CartItems.Add(cartItem);
+            SaveChanges();
+            cartItem.Product = Products.Find(cartItem.ProductId);
+            return cartItem;
+        }
     }
 }
