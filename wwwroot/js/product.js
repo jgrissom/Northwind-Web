@@ -35,4 +35,13 @@ $(function () {
         console.log($(this).data('id'));
         $('#cartModal').modal();
     });
+    // update total when cart quantity is changed
+    $('#Quantity').change(function () {
+        var total = parseInt($(this).val()) * parseFloat($('#UnitPrice').html());
+        $('#Total').html(numberWithCommas(total.toFixed(2)));
+    });
+    // function to display commas in number
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 });
