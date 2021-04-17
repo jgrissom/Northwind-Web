@@ -26,5 +26,8 @@ namespace Northwind.Controllers
         [HttpGet, Route("api/category/{CategoryId}/product/discontinued/{discontinued}")]
         // returns all products in a specific category where discontinued = true/false
         public IEnumerable<Product> GetByCategoryDiscontinued(int CategoryId, bool discontinued) => _northwindContext.Products.Where(p => p.CategoryId == CategoryId && p.Discontinued == discontinued).OrderBy(p => p.ProductName);
+        [HttpPost, Route("api/addtocart")]
+        // adds a row to the cartitem table
+        public CartItem Post([FromBody] CartItemJSON cartItem) => _northwindContext.AddToCart(cartItem);
     }
 }
