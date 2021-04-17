@@ -42,7 +42,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <div class="row">
+                    <div class="col col-xs-5"><strong>Product</strong></div>
+                    <div class="col col-xs-2 text-right"><strong>Price</strong></div>
+                    <div class="col col-xs-2"><strong>Quantity</strong></div>
+                    <div class="col col-xs-3 text-right"><strong>Total</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col col-xs-5 pt-2" id="ProductName">Cool Product</div>
+                    <div class="col col-xs-2 pt-2 text-right">
+                        $<span id="UnitPrice">9.99</span>
+                    </div>
+                    <div class="col col-xs-2">
+                        <input type="number" min="1" value="1" id="Quantity" class="form-control" />
+                    </div>
+                    <div class="col col-xs-3 pt-2 text-right">
+                        $<span id="Total">0.00</span>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
