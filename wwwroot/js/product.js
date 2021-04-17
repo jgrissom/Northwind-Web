@@ -32,12 +32,17 @@ $(function () {
     });
     // delegated event listener
     $('#product_rows').on('click', 'tr', function(){
-        $('#ProductId').html($(this).data('id'));
-        $('#ProductName').html($(this).data('name'));
-        $('#UnitPrice').html($(this).data('price').toFixed(2));
-        // calculate and display total in modal
-        $('#Quantity').change();
-        $('#cartModal').modal();
+        // make sure a customer is logged in
+        if ($('#User').data('customer').toLowerCase() == "true"){
+            $('#ProductId').html($(this).data('id'));
+            $('#ProductName').html($(this).data('name'));
+            $('#UnitPrice').html($(this).data('price').toFixed(2));
+            // calculate and display total in modal
+            $('#Quantity').change();
+            $('#cartModal').modal();
+        } else {
+            alert("Only signed in customers can add items to the cart");
+        }
     });
     // update total when cart quantity is changed
     $('#Quantity').change(function () {
